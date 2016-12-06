@@ -17,11 +17,10 @@ foreach($characters as $charactersOnPosition) {
 
 	arsort($counts);
 
-	$message .= array_shift(array_keys($counts));
+	$keys = array_keys($counts);
 
-	asort($counts);
-
-	$messagePart2 .= array_shift(array_keys($counts));
+	$message .= array_shift($keys);
+	$messagePart2 .= array_pop($keys);
 }
 
 echo 'The error corrected message is ' . $message . PHP_EOL;
